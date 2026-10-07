@@ -1,0 +1,19 @@
+<svg class="track-svg" id="track-svg-elem" viewBox="0 0 729.001 856.314" preserveAspectRatio="none" overflow="visible">
+    <!-- Pista de Asfalto -->
+    <path id="track-surface"
+        d="M483.198 159.98C476.521 98.8142 108.544 90.0101 108.544 90.0101H1V1.04213C1 1.04213 663.271 28.3812 689.282 114.106C715.293 199.83 289.618 293.432 303.124 340.233C316.629 387.034 660.27 349.963 724.296 507.048C788.323 664.132 1 855.042 1 855.042V773.952C1 773.952 539.721 638.646 523.714 550.141C507.708 461.637 144.122 539.006 131.553 383.327C119.136 229.512 489.874 221.145 483.198 159.98Z"
+        fill="black" stroke="black" stroke-width="2" />
+
+    <!-- Elemento do Carro animado nativamente -->
+    <g id="f1-car-track">
+
+        <!-- O bico do carro é corrigido girando a imagem em 90 graus (se ele andar de ré, mude o 90 para -90) -->
+        <g transform="rotate(90)">
+            <image href="assets/car-image.png" x="-24" y="-12" width="48" height="24" />
+        </g>
+
+        <!-- dur="15s" diminui drasticamente a velocidade, deixando o movimento suave e profissional -->
+        <animateMotion dur="15s" repeatCount="indefinite" rotate="auto"
+            path="M -70 45 L 1 45 C 380 45, 576 125, 586 137 C 602 210, 204 261, 217 362 C 230 463, 584 406, 624 528 C 664 651, 380 730, 1 814 L -70 814" />
+    </g>
+</svg>
