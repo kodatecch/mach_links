@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="white">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mach One | STEM Racing - Como Nos Encontrar</title>
-    <meta name="description" content="A Mach One une tecnologia avançada e precisão para dominar as competições de STEM Racing. Conheça nossos links e canais oficiais.">
+    <meta name="description"
+        content="A Mach One une tecnologia avançada e precisão para dominar as competições de STEM Racing. Conheça nossos links e canais oficiais.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Main Frame (Full-Screen Edge-to-Edge) -->
     <main class="page-wrapper" id="main-frame">
-        
+
         <!-- HUD Corner Brackets -->
         <img src="assets/corner-tl.svg" class="hud-corner hud-corner-tl" alt="" aria-hidden="true">
         <img src="assets/corner-tr.svg" class="hud-corner hud-corner-tr" alt="" aria-hidden="true">
@@ -23,7 +28,7 @@
         <div class="layout-container">
             <!-- LEFT COLUMN - Brand & Track Hero -->
             <section class="hero-column" aria-label="Mach One Brand">
-                
+
                 <!-- Brand Logo (Positioned high up) -->
                 <header class="logo-wrapper">
                     <a href="#" class="logo-link" aria-label="Mach One Página Inicial">
@@ -34,17 +39,24 @@
                 <!-- Winding S-Track with Autonomous F1 Car -->
                 <div class="track-background" id="track-bg" aria-hidden="true">
                     <svg class="track-svg" id="track-svg-elem" viewBox="0 0 729.001 856.314" preserveAspectRatio="none" overflow="visible">
-                        <!-- Track Asphalt Surface -->
-                        <path id="track-surface" d="M483.198 159.98C476.521 98.8142 108.544 90.0101 108.544 90.0101H1V1.04213C1 1.04213 663.271 28.3812 689.282 114.106C715.293 199.83 289.618 293.432 303.124 340.233C316.629 387.034 660.27 349.963 724.296 507.048C788.323 664.132 1 855.042 1 855.042V773.952C1 773.952 539.721 638.646 523.714 550.141C507.708 461.637 144.122 539.006 131.553 383.327C119.136 229.512 489.874 221.145 483.198 159.98Z" fill="black" stroke="black" stroke-width="2"/>
-                        
-                        <!-- Track Centerline Guide for Autonomous Driving (Starts off-screen and loops seamlessly) -->
-                        <path id="f1-track-line" d="M -70 45 L 1 45 C 380 45, 576 125, 586 137 C 602 210, 204 261, 217 362 C 230 463, 584 406, 624 528 C 664 651, 380 730, 1 814 L -70 814" fill="none" stroke="none" />
-                    </svg>
+                        <!-- Pista de Asfalto -->
+                        <path id="track-surface"
+                            d="M483.198 159.98C476.521 98.8142 108.544 90.0101 108.544 90.0101H1V1.04213C1 1.04213 663.271 28.3812 689.282 114.106C715.293 199.83 289.618 293.432 303.124 340.233C316.629 387.034 660.27 349.963 724.296 507.048C788.323 664.132 1 855.042 1 855.042V773.952C1 773.952 539.721 638.646 523.714 550.141C507.708 461.637 144.122 539.006 131.553 383.327C119.136 229.512 489.874 221.145 483.198 159.98Z"
+                            fill="black" stroke="black" stroke-width="2" />
 
-                    <!-- Real Hardware-Accelerated Autonomous Car on Track -->
-                    <div class="track-car-wrapper" id="f1-car-track">
-                        <img src="assets/car-image.png" alt="Carro F1 Mach One" class="track-car-img">
-                    </div>
+                        <!-- Elemento do Carro animado nativamente -->
+                        <g id="f1-car-track">
+
+                            <!-- O bico do carro é corrigido girando a imagem em 90 graus (se ele andar de ré, mude o 90 para -90) -->
+                            <g transform="rotate(90)">
+                                <image href="assets/car-image.png" xlink:href="assets/car-image.png" x="-24" y="-12" width="48" height="24" />
+                            </g>
+
+                            <!-- dur="15s" diminui drasticamente a velocidade, deixando o movimento suave e profissional -->
+                            <animateMotion dur="15s" repeatCount="indefinite" rotate="auto"
+                                path="M -70 45 L 1 45 C 380 45, 576 125, 586 137 C 602 210, 204 261, 217 362 C 230 463, 584 406, 624 528 C 664 651, 380 730, 1 814 L -70 814" />
+                        </g>
+                    </svg>
                 </div>
 
             </section>
@@ -62,176 +74,181 @@
                     <div class="links-groups-wrapper">
                         <!-- GROUP 1: REDES SOCIAIS -->
                         <div class="links-category-group" id="group-social">
-                        <h2 class="category-heading">REDES SOCIAIS</h2>
-                        <div class="category-divider-line"></div>
+                            <h2 class="category-heading">REDES SOCIAIS</h2>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 01 Instagram -->
-                        <a href="https://instagram.com/machone.stem" target="_blank" rel="noopener noreferrer" class="link-item-row" id="link-01">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">01</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/instagram.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">INSTAGRAM</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 01 Instagram -->
+                            <a href="https://instagram.com/machone.stem" target="_blank" rel="noopener noreferrer"
+                                class="link-item-row" id="link-01">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">01</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/instagram.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">INSTAGRAM</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 02 LinkedIn -->
-                        <a href="https://linkedin.com/company/machone-stem" target="_blank" rel="noopener noreferrer" class="link-item-row" id="link-02">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">02</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/linkedin.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">LINKEDIN</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 02 LinkedIn -->
+                            <a href="https://linkedin.com/company/machone-stem" target="_blank"
+                                rel="noopener noreferrer" class="link-item-row" id="link-02">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">02</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/linkedin.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">LINKEDIN</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 03 TikTok -->
-                        <a href="https://tiktok.com/@machone.stem" target="_blank" rel="noopener noreferrer" class="link-item-row" id="link-03">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">03</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/tiktok.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">TIKTOK</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
-                    </div>
+                            <!-- 03 TikTok -->
+                            <a href="https://tiktok.com/@machone.stem" target="_blank" rel="noopener noreferrer"
+                                class="link-item-row" id="link-03">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">03</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/tiktok.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">TIKTOK</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
+                        </div>
 
-                    <!-- GROUP 2: CONTATO DIRETO -->
-                    <div class="links-category-group" id="group-contact">
-                        <h2 class="category-heading">CONTATO DIRETO</h2>
-                        <div class="category-divider-line"></div>
+                        <!-- GROUP 2: CONTATO DIRETO -->
+                        <div class="links-category-group" id="group-contact">
+                            <h2 class="category-heading">CONTATO DIRETO</h2>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 04 Email -->
-                        <a href="mailto:contato@machone.stem" class="link-item-row" id="link-04">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">04</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/mail.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">EMAIL</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 04 Email -->
+                            <a href="mailto:contato@machone.stem" class="link-item-row" id="link-04">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">04</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/mail.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">EMAIL</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 05 Contato / Telefone -->
-                        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="link-item-row" id="link-05">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">05</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/phone.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">CONTATO</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
-                    </div>
+                            <!-- 05 Contato / Telefone -->
+                            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer"
+                                class="link-item-row" id="link-05">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">05</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/phone.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">CONTATO</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
+                        </div>
 
-                    <!-- GROUP 3: INFORMAÇÕES -->
-                    <div class="links-category-group" id="group-info">
-                        <h2 class="category-heading">INFORMAÇÕES</h2>
-                        <div class="category-divider-line"></div>
+                        <!-- GROUP 3: INFORMAÇÕES -->
+                        <div class="links-category-group" id="group-info">
+                            <h2 class="category-heading">INFORMAÇÕES</h2>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 06 Website -->
-                        <a href="https://machonestem.com.br" target="_blank" rel="noopener noreferrer" class="link-item-row" id="link-06">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">06</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/website.svg" alt="" class="row-icon-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">WEBSITE</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 06 Website -->
+                            <a href="https://machonestem.com.br" target="_blank" rel="noopener noreferrer"
+                                class="link-item-row" id="link-06">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">06</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/website.svg" alt="" class="row-icon-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">WEBSITE</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 07 Competição -->
-                        <a href="#competicao" class="link-item-row" id="link-07">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">07</span>
-                            <div class="row-icon-wrap icon-wide">
-                                <img src="assets/racecar-icon.svg" alt="" class="row-icon-svg racecar-svg">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">COMPETIÇÃO</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 07 Competição -->
+                            <a href="#competicao" class="link-item-row" id="link-07">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">07</span>
+                                <div class="row-icon-wrap icon-wide">
+                                    <img src="assets/racecar-icon.svg" alt="" class="row-icon-svg racecar-svg">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">COMPETIÇÃO</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
 
-                        <!-- 08 Patrocinadores -->
-                        <a href="#patrocinadores" class="link-item-row" id="link-08">
-                            <span class="hover-car-runner" aria-hidden="true">
-                                <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
-                            </span>
-                            <span class="row-number">08</span>
-                            <div class="row-icon-wrap">
-                                <img src="assets/sponsorship.png" alt="" class="row-icon-img">
-                            </div>
-                            <div class="row-text-info">
-                                <span class="row-title">PATROCINADORES</span>
-                                <span class="row-handle">@machone.stem</span>
-                            </div>
-                            <div class="row-arrow-wrap">
-                                <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
-                            </div>
-                        </a>
-                        <div class="category-divider-line"></div>
+                            <!-- 08 Patrocinadores -->
+                            <a href="#patrocinadores" class="link-item-row" id="link-08">
+                                <span class="hover-car-runner" aria-hidden="true">
+                                    <img src="assets/racecar-icon.svg" alt="" class="hover-runner-img">
+                                </span>
+                                <span class="row-number">08</span>
+                                <div class="row-icon-wrap">
+                                    <img src="assets/sponsorship.png" alt="" class="row-icon-img">
+                                </div>
+                                <div class="row-text-info">
+                                    <span class="row-title">PATROCINADORES</span>
+                                    <span class="row-handle">@machone.stem</span>
+                                </div>
+                                <div class="row-arrow-wrap">
+                                    <img src="assets/arrow.svg" alt="" class="row-arrow-svg">
+                                </div>
+                            </a>
+                            <div class="category-divider-line"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </div>
     </main>
 
@@ -242,4 +259,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

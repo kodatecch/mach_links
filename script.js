@@ -4,77 +4,8 @@
    ========================================================= */
 
 function initMachOneInteractive() {
-    // ---- Autonomous F1 Car driving along track circuit ----
-    const trackLine = document.getElementById('f1-track-line');
-    const carTrack = document.getElementById('f1-car-track');
-    const trackSvg = document.getElementById('track-svg-elem');
-
-    if (trackLine && carTrack && trackSvg) {
-        const totalLength = trackLine.getTotalLength();
-        let distance = 0;
-        const lapDuration = 18.0; // Animação lenta e elegante: 18 segundos por volta completa
-        let lastTime = performance.now();
-        let currentAngle = null;
-
-        // Responsive SVG dimension tracking without per-frame reflow
-        let cachedRect = trackSvg.getBoundingClientRect();
-        function updateSvgBounds() {
-            const r = trackSvg.getBoundingClientRect();
-            if (r.width > 0 && r.height > 0) {
-                cachedRect = r;
-            }
-        }
-        window.addEventListener('resize', updateSvgBounds);
-        setTimeout(updateSvgBounds, 250);
-        setTimeout(updateSvgBounds, 1000);
-
-        function driveLoop(currentTime) {
-            const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.1);
-            lastTime = currentTime;
-
-            // Advance distance smoothly along track
-            distance = (distance + (totalLength / lapDuration) * deltaTime) % totalLength;
-
-            // Point on the 729x856 SVG viewBox coordinate space
-            const pt = trackLine.getPointAtLength(distance);
-
-            // Symmetric trajectory sampling for ultra-smooth tangent calculation
-            const sampleDist = 18;
-            const prevDist = Math.max(0, distance - sampleDist);
-            const nextDist = Math.min(totalLength, distance + sampleDist);
-            const prevPt = trackLine.getPointAtLength(prevDist);
-            const nextPt = trackLine.getPointAtLength(nextDist);
-
-            const dx = nextPt.x - prevPt.x;
-            const dy = nextPt.y - prevPt.y;
-            // Car image faces up, so add 90 degrees to point forward
-            const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
-
-            // Smooth angular interpolation (damping steering so curves are progressive and smooth)
-            if (currentAngle === null) {
-                currentAngle = targetAngle;
-            } else {
-                let diff = targetAngle - currentAngle;
-                while (diff < -180) diff += 360;
-                while (diff > 180) diff -= 360;
-                const steeringDamping = 6.5; // Natural, progressive steering at slow cruising speed
-                currentAngle += diff * Math.min(1, deltaTime * steeringDamping);
-            }
-
-            // Scaled pixel coordinates matching current rendered SVG size
-            const scaleX = cachedRect.width > 0 ? cachedRect.width / 729.001 : 1;
-            const scaleY = cachedRect.height > 0 ? cachedRect.height / 856.314 : 1;
-
-            const posX = pt.x * scaleX;
-            const posY = pt.y * scaleY;
-
-            carTrack.style.transform = `translate(${posX.toFixed(1)}px, ${posY.toFixed(1)}px) translate(-50%, -50%) rotate(${currentAngle.toFixed(1)}deg)`;
-            carTrack.style.opacity = '1';
-
-            requestAnimationFrame(driveLoop);
-        }
-        requestAnimationFrame(driveLoop);
-    }
+    // Note: The autonomous F1 car track animation is natively executed via SVG <animateMotion>
+    // inside index.html for maximum performance (60/120fps hardware acceleration on GPU).
 
     // ---- Ripple & Micro-click Feedback on Link Rows ----
     const links = document.querySelectorAll('.link-item-row');

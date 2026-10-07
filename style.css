@@ -621,151 +621,7 @@ img {
     }
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN (Tablets & Mobile)
-   ========================================================= */
-@media (max-width: 1024px) {
-    .page-wrapper {
-        height: auto;
-        min-height: 100vh;
-        overflow-y: auto;
-    }
-
-    .layout-container {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        height: auto;
-    }
-
-    .center-divider {
-        display: none;
-    }
-
-    .hero-column {
-        height: auto;
-        min-height: 440px;
-        padding: 32px 24px 24px 24px;
-    }
-
-    .track-background {
-        top: 130px;
-        height: 320px;
-    }
-
-    .links-column {
-        height: auto;
-        padding: 20px 24px 44px 24px;
-        justify-content: flex-start;
-    }
-    
-    .links-panel-inner {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hud-corner {
-        width: 20px;
-        height: 20px;
-    }
-
-    .hud-corner-tl { top: 12px; left: 12px; }
-    .hud-corner-tr { top: 12px; right: 12px; }
-    .hud-corner-bl { bottom: 12px; left: 12px; }
-    .hud-corner-br { bottom: 12px; right: 12px; }
-
-    .hero-column {
-        padding: 24px 16px 20px 16px;
-        min-height: 380px;
-    }
-
-    .brand-logo {
-        width: 140px;
-    }
-
-    .track-car-wrapper {
-        top: 110px;
-        left: 16px;
-    }
-
-    .track-car-img {
-        width: 32px;
-    }
-
-    .track-background {
-        top: 100px;
-        height: 260px;
-    }
-
-    .links-column {
-        padding: 10px 16px 36px 16px;
-    }
-
-    .links-main-title {
-        font-size: 9px;
-        margin-top: 0;
-        margin-bottom: 14px;
-    }
-
-    .links-category-group {
-        margin-bottom: 20px;
-    }
-
-    .category-heading {
-        font-size: 11px;
-        margin-bottom: 8px;
-    }
-
-    .link-item-row {
-        grid-template-columns: 19px 27px 1fr 14px;
-        padding: 7px 5px;
-    }
-
-    .row-icon-wrap {
-        width: 22px;
-        height: 22px;
-    }
-
-    .row-icon-svg {
-        width: 17.5px;
-        height: 17.5px;
-    }
-
-    .row-icon-img {
-        width: 18.5px;
-        height: 18.5px;
-    }
-
-    .racecar-svg {
-        width: 27px;
-    }
-
-    .row-number {
-        font-size: 9.5px;
-    }
-
-    .row-title {
-        font-size: 11.5px;
-    }
-
-    .row-handle {
-        font-size: 9px;
-    }
-}
-
-/* Accessibility: Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* Version Switcher (Discreet F1 Theme Toggle Badge) */
+/* ---- VERSION SWITCHER (Discreet F1 Theme Toggle Badge - Base Styles) ---- */
 .theme-switch-badge {
     position: fixed;
     bottom: 20px;
@@ -778,6 +634,7 @@ img {
     background: rgba(0, 0, 0, 0.85);
     color: #FFFFFF;
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     font-family: var(--font-body);
@@ -787,7 +644,7 @@ img {
     text-transform: uppercase;
     text-decoration: none;
     transition: transform var(--transition-snappy), background var(--transition-snappy), opacity var(--transition-snappy);
-    opacity: 0.75;
+    opacity: 0.85;
 }
 
 .theme-switch-badge:hover {
@@ -816,4 +673,355 @@ img {
 
 [data-theme="red"] .theme-dot {
     background-color: var(--brand-red);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (Senior Front-End Architecture)
+   Tablets, Mobile Devices & Safe Area Adaptation
+   ========================================================= */
+
+/* ---- TABLET / MEDIUM SCREENS (769px to 1024px) ---- */
+@media (max-width: 1024px) {
+    .page-wrapper {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .layout-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        height: auto;
+        width: 100%;
+    }
+
+    .center-divider {
+        display: none;
+    }
+
+    .hero-column {
+        height: auto;
+        min-height: auto;
+        padding: clamp(24px, 4vh, 36px) clamp(24px, 5vw, 40px) 12px clamp(24px, 5vw, 40px);
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .logo-wrapper {
+        margin: 0 auto 4px auto;
+        text-align: center;
+    }
+
+    .brand-logo {
+        width: clamp(130px, 18vw, 155px);
+        margin: 0 auto;
+    }
+
+    .track-background {
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 480px;
+        height: clamp(160px, 24vh, 220px);
+        margin: 8px auto 0 auto;
+        overflow: hidden;
+    }
+
+    .links-column {
+        height: auto;
+        padding: 16px clamp(24px, 5vw, 40px) clamp(60px, 8vh, 80px) clamp(24px, 5vw, 40px);
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .links-panel-inner {
+        max-width: 580px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .links-groups-wrapper {
+        gap: 24px;
+        justify-content: flex-start;
+    }
+
+    .links-category-group {
+        margin-bottom: 6px;
+    }
+}
+
+/* ---- MOBILE SCREENS (320px to 768px) ---- */
+@media (max-width: 768px) {
+    .page-wrapper {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Fixed Futuristic HUD Corner Brackets - Frames Mobile Screen like an F1 Helmet Visor */
+    .hud-corner {
+        position: fixed;
+        width: 16px;
+        height: 16px;
+        z-index: 40;
+        opacity: 0.55;
+    }
+
+    .hud-corner-tl {
+        top: max(8px, env(safe-area-inset-top, 8px));
+        left: 8px;
+    }
+
+    .hud-corner-tr {
+        top: max(8px, env(safe-area-inset-top, 8px));
+        right: 8px;
+    }
+
+    .hud-corner-bl {
+        bottom: max(8px, env(safe-area-inset-bottom, 8px));
+        left: 8px;
+    }
+
+    .hud-corner-br {
+        bottom: max(8px, env(safe-area-inset-bottom, 8px));
+        right: 8px;
+    }
+
+    /* Compact, High-Impact Hero Brand Banner */
+    .hero-column {
+        padding: max(18px, env(safe-area-inset-top, 18px)) 16px 4px 16px;
+        min-height: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .logo-wrapper {
+        margin: 0 auto 2px auto;
+        text-align: center;
+    }
+
+    .brand-logo {
+        width: clamp(118px, 34vw, 138px);
+        margin: 0 auto;
+    }
+
+    /* Responsive Track Stage: Keeps the car & racing track prominent without pushing links down */
+    .track-background {
+        position: relative;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 390px;
+        height: clamp(130px, 19vh, 160px);
+        margin: 2px auto 0 auto;
+        overflow: hidden;
+    }
+
+    /* Content & Links Column */
+    .links-column {
+        padding: 8px 16px calc(76px + env(safe-area-inset-bottom, 16px)) 16px;
+        height: auto;
+        width: 100%;
+    }
+
+    .links-panel-inner {
+        max-width: 440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .links-main-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-top: 2px;
+        margin-bottom: 14px;
+        opacity: 0.9;
+    }
+
+    .links-groups-wrapper {
+        gap: 16px;
+        justify-content: flex-start;
+    }
+
+    .links-category-group {
+        margin-bottom: 4px;
+    }
+
+    .category-heading {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        margin-bottom: 7px;
+    }
+
+    /* Ergonomic Touch Targets (WCAG 2.5.5 Compliant >= 48px height) */
+    .link-item-row {
+        grid-template-columns: 22px 28px 1fr 16px;
+        gap: 6px;
+        padding: 12px 10px;
+        min-height: 48px;
+        border-radius: 4px;
+        margin-bottom: 1px;
+    }
+
+    .row-number {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .row-icon-wrap {
+        width: 24px;
+        height: 24px;
+    }
+
+    .row-icon-svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .row-icon-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .racecar-svg {
+        width: 28px;
+    }
+
+    .row-text-info {
+        padding-left: 6px;
+        gap: 2px;
+    }
+
+    .row-title {
+        font-size: 12.5px;
+        letter-spacing: 0.3px;
+        line-height: 1.2;
+    }
+
+    #group-social .row-title {
+        font-size: 13px;
+    }
+
+    .row-handle {
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .row-arrow-wrap {
+        width: 16px;
+    }
+
+    .row-arrow-svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Mobile Centered Floating Theme Badge (Dock Pill) */
+    .theme-switch-badge {
+        bottom: max(16px, env(safe-area-inset-bottom, 16px));
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 18px;
+        font-size: 10.5px;
+        letter-spacing: 0.9px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        border-radius: 24px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .theme-switch-badge:hover {
+        transform: translateX(-50%) translateY(-2px);
+    }
+}
+
+/* ---- ULTRA-COMPACT SCREENS (Phones <= 360px wide, e.g. iPhone SE, Xperia) ---- */
+@media (max-width: 360px) {
+    .brand-logo {
+        width: 112px;
+    }
+
+    .track-background {
+        height: 125px;
+    }
+
+    .link-item-row {
+        grid-template-columns: 20px 24px 1fr 14px;
+        padding: 10px 8px;
+        min-height: 44px;
+    }
+
+    .row-title {
+        font-size: 11.5px;
+    }
+
+    .row-handle {
+        font-size: 9.5px;
+    }
+}
+
+/* ---- TOUCH SCREEN OPTIMIZATIONS (Eliminate sticky hover & provide native tap feel) ---- */
+@media (hover: none) and (pointer: coarse) {
+    /* Hide desktop-only hover car streak on mobile touchscreens */
+    .hover-car-runner {
+        display: none !important;
+    }
+
+    .link-item-row::before {
+        display: none;
+    }
+
+    /* Instant tactile feedback on tap */
+    .link-item-row:active {
+        background-color: var(--theme-hover-bg) !important;
+        transition: background-color 70ms ease;
+    }
+
+    .link-item-row:active .row-number,
+    .link-item-row:active .row-title,
+    .link-item-row:active .row-handle {
+        color: var(--theme-hover-number) !important;
+    }
+
+    .link-item-row:active .row-icon-svg,
+    .link-item-row:active .row-icon-img,
+    .link-item-row:active .racecar-svg {
+        filter: var(--theme-hover-icon-filter) !important;
+    }
+
+    .link-item-row:active .row-arrow-svg {
+        filter: var(--theme-hover-arrow-filter) !important;
+        transform: translateX(4px);
+    }
+}
+
+/* ---- ACCESSIBILITY: REDUCED MOTION ---- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    #f1-car-track animateMotion {
+        dur: 0s;
+        repeatCount: 1;
+    }
 }
